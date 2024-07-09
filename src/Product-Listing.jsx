@@ -11,9 +11,11 @@ import description from './assets/description.svg'
 import Footer from './components/Footer.jsx'
 import shoes from './data/data.js'
 import Sneakers from './Sneakers.jsx'
+import { useNavigate } from 'react-router-dom'
 // import Sneakers from './Sneakers'
 
 export default function ProductListing() {
+    const navigate = useNavigate();
   return (
     <div>
         <div className='main-nav'>
@@ -43,15 +45,15 @@ export default function ProductListing() {
         </div>
 
         <div className='category'>
-           <div className='category-card'>
+           <div className='category-card' onClick={() => navigate("/product?type=sneakers")}>
                 <img src={sneakersimage} alt="" />
                 Sneakers
            </div>
-           <div className='category-card'>
+           <div className='category-card' onClick={() => navigate("/product?type=shirts")}>
                 <img src={sneakersimage} alt="" />
                 Shirts
            </div>
-           <div className='category-card'>
+           <div className='category-card' onClick={() => navigate("/product?type=joggers")}>
                 <img src={sneakersimage} alt="" />
                 Joggers
            </div>

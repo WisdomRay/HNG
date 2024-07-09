@@ -163,9 +163,12 @@ body {
   translate: transform(100%, -20%);
 } */
 
-#sneakers-page{
+/* #sneakers-page{
   border-bottom: 1px solid rgba(169, 93, 23, 1);
-}
+} */
+ .active-route{
+  border-bottom: 1px solid rgba(169, 93, 23, 1);
+ }
 
 .pb-container{
   display: flex;

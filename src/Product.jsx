@@ -3,8 +3,22 @@ import product from './assets/Product.svg'
 import Footer from './components/Footer.jsx'
 import search from './assets/search.png'
 import Navbar from './components/Nav.jsx'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 export default function Product() {
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const type = queryParams.get('type');
+    const [active,setActive] = useState(type || "sneakers");
+    const navigate = useNavigate()
+    
+    useEffect(()=>{
+        if(type){
+            setActive(type)
+        }
+    },[type])
+
   return (
     <div>
 
@@ -13,9 +27,9 @@ export default function Product() {
         <div className="product-choice">
             <div>
                 <ul>
-                    <li className='active-route' id='sneakers-page'>Sneakers</li>
-                    <li id='shirts-page'>Shirts</li>
-                    <li id='joggers-page'>Joggers</li>
+                    <li className={`${active == "sneakers" ? 'active-route' : null}  `} onClick={() => navigate("/product?type=sneakers")}  id='sneakers-page'>Sneakers</li>
+                    <li className={`${active == "shirts" ? 'active-route' : null}`} onClick={() => navigate("/product?type=shirts")}  id='shirts-page'>Shirts</li>
+                    <li className={`${active == "joggers" ? 'active-route' : null}`} onClick={() => navigate("/product?type=joggers")}  id='joggers-page'>Joggers</li>
                 </ul>
             </div>
             <div className='pc-search'>
