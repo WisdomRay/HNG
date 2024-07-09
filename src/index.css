@@ -71,11 +71,8 @@ body {
 
 .main-nav{
   width: 100%;
-  /* background-image: url('./assets/banner.svg');
-  background-size: cover;
-  background-position: center; */
-  /* height: 700px; */
   position: relative;
+
 }
 #banner{
   object-fit: cover;
@@ -85,9 +82,6 @@ body {
   position: absolute;
   width: 100%;
   top: 0;
-  bottom: 0;
-  padding: 10px 0;
-
 }
 .top-nav{
   display: flex;
@@ -95,9 +89,9 @@ body {
   align-items: center;
   width: 90%;
   margin: auto;
-  padding: 30px 0 ;
+  padding: 20px 0;
 }
-.top-nav span{
+.top-nav p{
   color: rgba(255, 255, 255, 1);
   font-size: 20px;
 }
@@ -105,7 +99,7 @@ body {
 #reeves{
   color: #000;
 }
-.main-nav-icon{
+.nav-icon{
   display: flex;
   gap: 30px;
 }
@@ -116,10 +110,7 @@ body {
 }
 .banner-section{
   width: 1200px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 250px auto;
 }
 .banner-txt{
   text-align: center;
@@ -156,12 +147,7 @@ body {
   width: 100%;
   border-radius: 5px;
 }
-/* .pc-search img{
-  position: absolute;
-  left: 0;
-  top: 20%;
-  translate: transform(100%, -20%);
-} */
+
 
 /* #sneakers-page{
   border-bottom: 1px solid rgba(169, 93, 23, 1);
@@ -310,38 +296,35 @@ body {
   .banner-section,.category, .description, .display{
     max-width: 1000px;
   }
-  .main-nav-icon{
-    margin-bottom: 120px;
+  .banner-section{
+    margin: 130px auto;
   }
+
+}
+
+@media screen and (max-width:1024px) {
+  
+  .banner-section{
+    margin: 100px auto;
+  }
+
 }
 
 @media screen and (max-width:1023px) {
   .banner-section,.category, .description, .display{
     max-width: 900px;
   }
-  .main-nav-icon{
-    margin-bottom: 90px;
-  }
-  .banner-section{
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -70%);
-  }
 }
+
 @media screen and (max-width:992px) {
   .banner-section,.category, .description, .display{
     max-width: 700px;
   }
-  .main-nav-icon{
-    margin-bottom: 50px;
-  } 
   .description{
     flex-direction: column;
   }
   .banner-section{
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -70%);
+    margin: 80px auto;
   }
   .banner-txt{
     font-size: 17px;
@@ -352,17 +335,35 @@ body {
   .banner-section,.category, .description, .display{
     max-width: 700px;
   }
-  .main-nav-icon{
-    margin-bottom: 50px;
-  } 
   .description{
     flex-direction: column;
   }
   .banner-section{
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -70%);
+    margin: 30px auto;
   }
+}
+
+@media screen and (max-width:800px) {
+  .banner-section{
+    margin: 10px auto;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .banner-section{
+    margin: 10px auto;
+    width: 1000px;
+  }
+  .banner-txt{
+    font-size: 16px;
+  }
+}
+@media screen and (max-width:708px) {
+  .banner-section{
+    margin: 10px auto;
+    width: 400px;
+  }
+
 }
 
 

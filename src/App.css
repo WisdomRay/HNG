@@ -15,15 +15,22 @@
 }
 .main-nav-icon{
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 30px;
 }
 .gender-category ul{
     display: flex;
     list-style: none;
-    padding: 0;
+    /* padding: 0; */
     gap: 20px;
 }
 
 .top-nav div{
     border: 1px solid;
+}
+@media screen and (max-width:992px) {
+    .gender-category{
+        display: none;
+    }
 }

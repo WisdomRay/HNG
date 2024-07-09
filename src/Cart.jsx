@@ -2,7 +2,11 @@ import Navbar from './components/Nav.jsx'
 // import cartbackground from './assets/cart-background.png'
 import leftsneaker from './assets/sneakers-left.png'
 import Footer from './components/Footer.jsx'
-export default function Cart() {
+import remove from './assets/remove.png'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+export default function Cart({cart}) {
+  const navigate = useNavigate()
   return (
     <div>
       <Navbar />
@@ -17,75 +21,48 @@ export default function Cart() {
           
           <div className="show-items">
             <p>Items</p>
-
-            <div className="items-display">
-                <div className='id-img'>
-                  <img src={leftsneaker} alt="" />
-                </div>
-
-                <div className="item-descriptions">
-                  <div id='final-description'>
-                    <div>
-                      Python Air sneaker
-                    </div>
-                    <div id='delete'>
-                      {/* <img src={leftsneaker} alt="." /> */}
-                      Remove
+            {cart.map((item) =>{
+              return(
+                <div key={item.id}>
+                        <div className="items-display">
+                    <div className='id-img'>
+                      <img src={leftsneaker} alt="" />
                     </div>
 
-                  </div>
-                  <p>Color:Blue</p>
+                    <div className="item-descriptions">
+                      <div id='final-description'>
+                        <div>
+                          {item.name}
+                        </div>
+                        <div id='delete'>
+                          {/* <img src={leftsneaker} alt="." /> */}
+                          Remove
+                        </div>
 
-                  <div id='size'>
-                    <p>Python Air sneaker</p>
-                    <span id='count'>
-                      <button className='id' id='increment'>-</button>
-                      1
-                      <button className='id' id="decrement">+</button>
-                    </span>
+                      </div>
+                      <p>Color:Blue</p>
 
-                  </div>
+                      <div id='size'>
+                        <p>Python Air sneaker</p>
+                        <span id='count'>
+                          <button className='id' id='increment'>-</button>
+                          1
+                          <button className='id' id="decrement">+</button>
+                        </span>
 
-                 <p>#35000</p>
+                      </div>
 
-                </div>
-                
-            </div>
-              
-              <hr />
+                    <p>{item.price}</p>
 
-            <div className="items-display">
-                <div className='id-img'>
-                  <img src={leftsneaker} alt="" />
-                </div>
-
-                <div className="item-descriptions">
-                  <div id='final-description'>
-                    <div>
-                      Python Air sneaker
                     </div>
-                    <div id='delete'>
-                      {/* <img src={leftsneaker} alt="." /> */}
-                      Remove
-                    </div>
-
-                  </div>
-                  <p>Color:Blue</p>
-
-                  <div id='size'>
-                    <p>Python Air sneaker</p>
-                    <span id='count'>
-                      <button className='id' id='increment'>-</button>
-                      1
-                      <button className='id' id="decrement">+</button>
-                    </span>
-
-                  </div>
-
-                 <p>#35000</p>
+                    
+                </div>
+                <hr />
 
                 </div>
-            </div>
+              )
+            })}
+          
           </div>
 
       
@@ -107,7 +84,7 @@ export default function Cart() {
               </tr>
             </table>
 
-            <button id="checkout">Check out</button>
+            <button id="checkout" onClick={() => navigate('/checkout')}>Check out</button>
 
           </div>
       </div>

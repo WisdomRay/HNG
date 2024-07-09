@@ -4,7 +4,8 @@
 // eslint-disable-next-line react/prop-types
 
 import SneakersImage from './assets/sneakers-right.svg'
-export default function Sneakers({data}) {
+export default function Sneakers({data, addToCart}) {
+    
   return (
     <div className="display-card">
         {data.map((shoe) => {
@@ -15,7 +16,7 @@ export default function Sneakers({data}) {
                         <p>{shoe.name}</p>
                         <span>{shoe.price}</span>
                     </div>
-                    <div className="addtocart-btn" onClick={() => console.log(shoe.id)}>Add to cart</div>
+                    <div className="addtocart-btn" onClick={() => addToCart(shoe.id)}>Add to cart</div>
                 </div>
             )
         })}

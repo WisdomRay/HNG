@@ -8,7 +8,6 @@ export default function Nav() {
         <div className='tn'>
             <div>
                 <span id='reeves' >Reeves</span>
-
             </div>
             <div className='gender-category'>
                 <ul>
@@ -16,7 +15,7 @@ export default function Nav() {
                     <li>Women</li>
                 </ul>
             </div>
-            <div className='main-nav-icon mni'>
+            <div className='main-nav-icon'>
                 <img src={orangecart} alt="" />
                 <img src={orangeuser} alt="" />
                 <img src={orangehamburger} alt="" />

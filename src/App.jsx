@@ -5,12 +5,17 @@ import { Route, RouterProvider, Routes } from 'react-router-dom'
 import Product from './Product'
 import Cart from './Cart'
 import Checkout from './Checkout'
+<<<<<<< HEAD
 // import { createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+=======
+import { useState } from 'react'
+>>>>>>> 6dafefa (next)
 
 
 function App() {
   // const [count, setCount] = useState(0)
 
+<<<<<<< HEAD
   // const router = createBrowserRouter(createRoutesFromElements(
   //   <>
   //     <Route path='/' element={<ProductListing/>}/>
@@ -19,6 +24,9 @@ function App() {
   //     <Route path='/checkout' element={<Checkout/>}/>
   //   </>
   // ))
+=======
+  const [cart,stateCart] = useState([])
+>>>>>>> 6dafefa (next)
 
   return (
     <>
@@ -44,9 +52,9 @@ function App() {
       </p> */}
          
     <Routes>
-      <Route path='/' element={<ProductListing/>}/>
+      <Route path='/' element={<ProductListing stateCart = {stateCart} cart ={cart}/>}/>
       <Route path='/product' element={<Product/>}/>
-      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/cart' element={<Cart cart={cart} />}/>
       <Route path='/checkout' element={<Checkout/>}/>
     </Routes> 
    

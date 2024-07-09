@@ -2,7 +2,7 @@
 // import { Route, Switch } from 'react-router-dom';
 
 import login from './assets/login.svg'
-import cart from './assets/white-cart.svg'
+import whitecart from './assets/white-cart.svg'
 import hamburger from './assets/quill_hamburger-white.svg'
 import banner from './assets/banner.svg'
 import sneakersimage from './assets/sneakers-left.png'
@@ -15,34 +15,33 @@ import { useNavigate } from 'react-router-dom'
 // import Sneakers from './Sneakers'
 
 export default function ProductListing() {
-    const navigate = useNavigate();
   return (
     <div>
         <div className='main-nav'>
-            <div>
-                <img src={banner} alt="" id='banner' />
-                <div className='overlay'>
+            <img src={banner} alt="" id='banner' />
+            <div className='overlay'>
 
-                    <div className='top-nav'>
-                            <span>Reeves</span>
-                            <div className='main-nav-icon'>
-                                <img src={cart} alt="" />
-                                <img src={login} alt="" />
-                                <img src={hamburger} alt="" />
-                            </div>
-                    </div>
-                    <div className='banner-section'>
-                        <div className='banner-txt'>
-                            Shoes are very important to people because they provide protection and lead us to adventure. In the Holocaust Museum, there are over 25,000 shoes that remain from the ruins of the concentration camps. Everyone who sees these shoes are left with profound thought because every one of them has the imprint of
-                        </div>
-                        <div className='pb-container'>
-                            <button id='product-btn'>Our Product</button>
-                        </div>
+                <div className='top-nav'>
+                    <p>Reeves</p>
+                    <div className='nav-icon'>
+                        <img src={whitecart} alt="" />
+                        <img src={login} alt="" />
+                        <img src={hamburger} alt="" />
                     </div>
                 </div>
-            </div>
 
+                <div className='banner-section'>
+                    <div className='banner-txt'>
+                        Shoes are very important to people because they provide protection and lead us to adventure. In the Holocaust Museum, there are over 25,000 shoes that remain from the ruins of the concentration camps. Everyone who sees these shoes are left with profound thought because every one of them has the imprint of
+                    </div>
+                    <div className='pb-container'>
+                        <button id='product-btn'>Our Product</button>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
 
         <div className='category'>
            <div className='category-card' onClick={() => navigate("/product?type=sneakers")}>
@@ -74,24 +73,10 @@ export default function ProductListing() {
                 <p>Sneakers</p>
                 <p>View more</p>
             </div>
-            <Sneakers data={shoes} />
-            <Sneakers data={shoes} />
-            <Sneakers data={shoes} />
-            {/* <div className="display-card">
-                {shoes.map((shoe,index) => {
-                    return (
-                        <div className='cards' key={index}>
-                            <img src={SneakersImage} alt="" />
-                            <div className="tag">
-                                <p>{shoe.name}</p>
-                                <span>{shoe.price}</span>
-                            </div>
-                            <div className="addtocart-btn">Add to cart</div>
-                        </div>
-                    )
-                })}
-               
-            </div> */}
+
+            <Sneakers data={shoes} addToCart={addToCart} />
+
+
             <div className="display-title">
                 <p>Shirts</p>
                 <p>View more</p>
