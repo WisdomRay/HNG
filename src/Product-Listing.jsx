@@ -11,7 +11,7 @@ import description from './assets/description.svg'
 import Footer from './components/Footer.jsx'
 import shoes from './data/data.js'
 import Sneakers from './Sneakers.jsx'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 // import Sneakers from './Sneakers'
 
 export default function ProductListing() {

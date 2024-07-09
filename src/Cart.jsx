@@ -3,7 +3,7 @@ import Navbar from './components/Nav.jsx'
 import leftsneaker from './assets/sneakers-left.png'
 import Footer from './components/Footer.jsx'
 import remove from './assets/remove.png'
-import { useState } from 'react'
+// import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 export default function Cart({cart}) {
   const navigate = useNavigate()
@@ -35,7 +35,7 @@ export default function Cart({cart}) {
                           {item.name}
                         </div>
                         <div id='delete'>
-                          {/* <img src={leftsneaker} alt="." /> */}
+                          <img src={remove} alt="." />
                           Remove
                         </div>
 
@@ -70,18 +70,20 @@ export default function Cart({cart}) {
         <div className="summary">
             <table className='checkout-summary'>
               <caption>Order Summary</caption>
-              <tr>
-                <td>Subtotal:</td>
-                <th>#35,000</th>
-              </tr>
-              <tr>
-                <td>Shipping fee:</td>
-                <th>#1200</th>
-              </tr>
-              <tr>
-                <td>Total:</td>
-                <th>#36200</th>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>Subtotal:</td>
+                  <th>#35,000</th>
+                </tr>
+                <tr>
+                  <td>Shipping fee:</td>
+                  <th>#1200</th>
+                </tr>
+                <tr>
+                  <td>Total:</td>
+                  <th>#36200</th>
+                </tr>
+              </tbody>
             </table>
 
             <button id="checkout" onClick={() => navigate('/checkout')}>Check out</button>
